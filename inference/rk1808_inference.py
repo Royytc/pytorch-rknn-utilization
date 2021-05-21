@@ -1,7 +1,7 @@
 from rknnlite.api import RKNNLite as RKNN
-import numpy
+import numpy as np
 model='linear_model.rknn'
-input_test_data = torch.tensor([[15]]).float()
+input_test_data = np.array([15],dtype=np.float32)
 rknn=RKNN()
 ret=rknn.load_rknn(path=model)
 print('--> Init runtime environment')
@@ -11,5 +11,5 @@ if ret != 0:
     exit(ret)
 print('done')
 
-output=rknn.inference(inputs=input_test_data.numpy())
+output=rknn.inference(inputs=[input_test_data])
 print(output)
