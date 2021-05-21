@@ -5,5 +5,4 @@ net=torch.nn.Sequential(
     torch.nn.Linear(10,1)
 )
 
-
 print(net)
